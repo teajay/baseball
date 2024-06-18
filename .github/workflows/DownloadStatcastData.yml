@@ -30,7 +30,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Run download script
-        run: Rscript StatcastData.R
+        run: Rscript StatcastDownload.R
 
       - name: commit
         run: |
