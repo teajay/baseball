@@ -12,7 +12,7 @@ jobs:
 
       - name: Install Analyzing Baseball Data With R package
         run: remotes::install_github("beanumber/abdwr3edata")
-        shell: RScript {0}
+        shell: Rscript {0}
 
       - name: Install CRAN Dependencies
         uses: r-lib/actions/setup-r-dependencies@v2
@@ -24,7 +24,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Run download script
-        run: RScript StatcastData.R
+        run: Rscript StatcastData.R
 
       - name: commit
         run: |
