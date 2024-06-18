@@ -16,9 +16,12 @@ jobs:
         uses: r-lib/actions/setup-r-dependencies@v2
         with: 
           packages: |
-            any::baseballr
             any::geomtextpath
             any::remotes
+
+      - name: Install BaseballR from GitHub
+        run: remotes::install_github("BillPetti/baseballr")
+        shell: Rscript {0}
   
       - name: Install Analyzing Baseball Data With R package
         run: remotes::install_github("beanumber/abdwr3edata")
