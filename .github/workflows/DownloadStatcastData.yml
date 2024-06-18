@@ -1,0 +1,33 @@
+on:
+  schedule:
+    - cron: 42 15 * 3-11 *
+
+jobs:
+  download-data:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set Up R
+        uses: r-lib/actions/setup-r@v2
+
+      - name: Install Analyzing Baseball Data With R package
+        run: remotes::install_github("beanumber/abdwr3edata")
+        shell: RScript {0}
+
+      - name: Install CRAN Dependencies
+        uses: r-lib/actions/setup-r-dependencies@v2
+        with: 
+          packages: |
+            any::baseballr
+
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Run download script
+        run: RScript StatcastData.R
+
+      - name: commit
+        run: |
+          git config --local user.name "$GITHUB_ACTOR"
+          git config --local user.email "$GITHUB_ACTOR@users.noreply.github.com"
+          git add \*.csv
+          git commit -m 'Statcast data file'
