@@ -17,11 +17,9 @@ jobs:
         with: 
           packages: |
             any::baseballr
-
-      - name: Install remotes dependency 
-        run: install.packages("remotes")
-        shell: Rscript {0}
-        
+            any::geomtextpath
+            any::remotes
+  
       - name: Install Analyzing Baseball Data With R package
         run: remotes::install_github("beanumber/abdwr3edata")
         shell: Rscript {0}
