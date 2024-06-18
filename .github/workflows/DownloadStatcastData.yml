@@ -41,8 +41,5 @@ jobs:
           git config --local user.email "$GITHUB_ACTOR@users.noreply.github.com"
           git add \*.csv
           git commit -m 'Statcast data file'
-
-      - uses: r-lib/actions/pr-push@v2
-        with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-      
+          git push
+          
