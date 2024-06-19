@@ -20,6 +20,8 @@ jobs:
             any::remotes
             any::httr
             any::rvest
+            any::tidyverse
+            any::lsa
 
       - name: Install BaseballR from GitHub
         run: remotes::install_github("BillPetti/baseballr")
