@@ -39,4 +39,4 @@ colnames(cosine_similarity) <- pitcher_ratios_wide$pitcher
 rownames(cosine_similarity) <- pitcher_ratios_wide$pitcher
 
 # Write the file 
-write.csv(cosine_similarity, file = paste0("pitcher_sims_", Sys.Date(), ".csv"))
+write.csv(cosine_similarity, file = paste0("pitcher_sims_csv/pitcher_sims_", Sys.Date(), ".csv"))
