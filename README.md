@@ -17,3 +17,6 @@ A one-off look at a game from June 10, when Cal Raleigh nearly got ejected for a
 
 # LineupShuffle
 Collects the Mariners batting order for each game of the season, calculates trailing 5-, and 10-day batting average and exports it all to Excel. Can be used to get a sense if there are any discernible patterns. 
+
+# HotColdStreaks
+Calculates the season batting average, 3-, 5-, and 7-day trailing averages for everyone who had a plate appearance on a given day and writes a CSV file to the hot_cold_csv directory here. 
