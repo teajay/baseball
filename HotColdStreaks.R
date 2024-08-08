@@ -68,7 +68,7 @@ batting_avgs <- cbind(batters,
                       do.call(rbind,trailing_avg_3),
                       do.call(rbind,trailing_avg_5),
                       do.call(rbind,trailing_avg_7))
-colnames(batting_avgs) <- c("player_id", "name", "avg", "avg_3", "avg_5", "avg_7")
+#colnames(batting_avgs) <- c("player_id", "name", "avg", "avg_3", "avg_5", "avg_7")
 
 # Calculate the deltas from the season average
 batting_avgs$delta_3 <- batting_avgs$avg_3 - batting_avgs$avg
