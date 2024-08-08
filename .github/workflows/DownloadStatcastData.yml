@@ -40,6 +40,9 @@ jobs:
       - name: Run PitcherSim script
         run: Rscript PitcherSims.R
 
+      - name: Run HotColdStreaks script
+        run: Rscript HotColdStreaks.R
+
       - name: commit
         run: |
           git config --local user.name "$GITHUB_ACTOR"
