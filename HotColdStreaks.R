@@ -77,6 +77,6 @@ batting_avgs$delta_5 <- batting_avgs$avg_5 - batting_avgs$avg
 batting_avgs$delta_7 <- batting_avgs$avg_7 - batting_avgs$avg
 
 # Write a CSV of the data file that was calculated
-write.csv(batting_avgs, file = paste0("hot_cold_csv/hot_cold_", Sys.Date(), ".csv"))
+write.csv(batting_avgs, file = paste0("hot_cold_csv/hot_cold_", Sys.Date(), ".csv"), row.names = FALSE)
 
 
