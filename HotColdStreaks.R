@@ -63,12 +63,13 @@ trailing_avg_5 <- lapply(batters$batter, get_trailing_batting_avg, yesterday, 5)
 trailing_avg_7 <- lapply(batters$batter, get_trailing_batting_avg, yesterday, 7)
 
 # Merge it all into a single data frame 
-batting_avgs <- cbind(batters, 
+batting_avgs <- cbind(Sys.Date(),
+                      batters, 
                       season_avg, 
-                      do.call(rbind,trailing_avg_3),
-                      do.call(rbind,trailing_avg_5),
-                      do.call(rbind,trailing_avg_7))
-colnames(batting_avgs) <- c("player_id", "name", "avg", "avg_3", "avg_5", "avg_7")
+                      as.data.frame(do.call(rbind,trailing_avg_3)),
+                      as.data.frame(do.call(rbind,trailing_avg_5)),
+                      as.data.frame(do.call(rbind,trailing_avg_7)))
+colnames(batting_avgs) <- c("date", "player_id", "name", "avg", "avg_3", "avg_5", "avg_7")
 
 # Calculate the deltas from the season average
 batting_avgs$delta_3 <- batting_avgs$avg_3 - batting_avgs$avg
@@ -76,6 +77,6 @@ batting_avgs$delta_5 <- batting_avgs$avg_5 - batting_avgs$avg
 batting_avgs$delta_7 <- batting_avgs$avg_7 - batting_avgs$avg
 
 # Write a CSV of the data file that was calculated
-write.csv(batting_avgs, file = paste0("hot_cold_csv/hot_cold_", yesterday, ".csv"))
+write.csv(batting_avgs, file = paste0("hot_cold_csv/hot_cold_", Sys.Date(), ".csv"))
 
 
