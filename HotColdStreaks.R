@@ -63,7 +63,7 @@ trailing_avg_5 <- lapply(batters$batter, get_trailing_batting_avg, yesterday, 5)
 trailing_avg_7 <- lapply(batters$batter, get_trailing_batting_avg, yesterday, 7)
 
 # Merge it all into a single data frame 
-batting_avgs <- cbind(Sys.Date(),
+batting_avgs <- cbind(Sys.Date() - 1,
                       batters, 
                       season_avg, 
                       as.data.frame(do.call(rbind,trailing_avg_3)),
