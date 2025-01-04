@@ -16,7 +16,10 @@ Plot the ratio of home runs to deep fly balls in the outfield. The hypothesis wa
 A one-off look at a game from June 10, when Cal Raleigh nearly got ejected for arguing a call. Looks at the number of pitches in the zone that were called ball, and vice versa. Split up by each team to see if calls favored one team or another. In the future this should be extended to look at more games, use per-batter strike zones from Statcast instead of the generic Game Day zones, and the edge of the baseball instead of the center. 
 
 # LineupShuffle
-Collects the Mariners batting order for each game of the season, calculates trailing 5-, and 10-day batting average and exports it all to Excel. Can be used to get a sense if there are any discernible patterns. 
+Collects the Mariners batting order for each game of the season, calculates trailing 5-, and 10-day batting average and exports it all to Excel. Can be used to create different pivot tables that let you get a sense if there are any discernible patterns. 
 
 # HotColdStreaks
-Calculates the season batting average, 3-, 5-, and 7-day trailing averages for everyone who had a plate appearance on a given day and writes a CSV file to the hot_cold_csv directory here. 
+Calculates the season batting average, 3-, 5-, and 7-day trailing averages for everyone who had a plate appearance on a given day and writes a CSV file to the hot_cold_csv directory here. Was using this data as a companion to the LineupShuffle above to see if there were lineup changes based on short-term performance. 
+
+# Pitch Prediction
+TensorFlow neural network that attempted to predict pitch types based on game state variables. Proved to be unsuccessful at making predictions. The Jupyter notebook output is hosted over on GitHub Pages (https://teajay.github.io/pitch-prediction.html), and the .ipynb file is checked into this repo.  
